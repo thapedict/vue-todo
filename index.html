@@ -12,7 +12,11 @@
         <hr>
         <h4>Items: {{items.length}}</h4>
         <ol class="list-wrapper" v-if="items.length > 0">
-            <li v-for="item in items">{{item.text}}</li>
+            <todo-item
+                v-for="item in items"
+                v-bind:key="item.key"
+                v-bind:item="item"
+            ></todo-item>
         </ol>
         <h5 v-else>No Items Added Yet.</h5>
 
