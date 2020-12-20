@@ -21,7 +21,7 @@
         <h5 v-else>No Items Added Yet.</h5>
 
         <div class="add-wrapper">
-            <input v-model="newItem" />
+            <input v-model="newItem" v-on:keyup.enter="addItem" />
             <button @click="addItem">Add</button>
         </div>
     </div>
