@@ -26,6 +26,68 @@
             <button @click="addItem">Add</button>
         </div>
     </div>
+    <style>
+        body {
+        font-family: arial;
+        font-size: 16px;
+        background-color: #ddd;
+        }
+
+        h1 {
+        font-family: "Arial Black";
+        font-size: 2.5em;
+        color: blueviolet;
+        margin-top: 0;
+        }
+
+        div#app {
+        padding: 2em 1em;
+        margin: 2em;
+        border: 1px solid #aaa;
+        border-radius: 1em;
+        max-width: 500px;
+        }
+
+        button {
+        padding: 0.5em 1em;
+        font-family: sans-serif;
+        font-weight: bold;
+        background-color: #0c48f1;
+        color: #fff;
+        border-radius: 5px;
+        border: none;
+        }
+
+        input {
+        padding: 0.5em 1em;
+        }
+
+        h5 {
+        color: #989898;
+        }
+
+        li {
+        margin-bottom: 1em;
+        }
+
+        li:after {
+        display: block;
+        clear: both;
+        content: '';
+        height: 1px;
+        background-color: #add;
+        margin-top: 15px;
+        }
+
+        li span {
+        font-weight: bold;
+        }
+
+        li button {
+        float: right;
+        margin-top: -8px;
+        }
+    </style>
     <script src="js/app.js"></script>
 </body>
 </html>
