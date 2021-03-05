@@ -1,6 +1,10 @@
 Vue.component('todo-item',{
     props: ['item'],
-    template: '<li><span>{{item.text}}</span><button v-on:click="$emit(\'delete-item\',item.key)">X</button></li>',
+    template: `<li>
+                <input type="checkbox" v-on:click="$emit('done-item',item.key)" />
+                <span v-bind:class="{done: item.done}">{{item.text}}</span>
+                <button v-on:click="$emit('delete-item',item.key)">X</button>
+               </li>`,
 });
 new Vue({
     el: '#app',
@@ -14,7 +18,8 @@ new Vue({
             if(this.newItem.length) {
                 this.items.push({
                     text: this.newItem.toString(),
-                    key: this.counter++
+                    key: this.counter++,
+                    done: false,
                 });
                 this.newItem = '';
             }
@@ -22,6 +27,10 @@ new Vue({
         removeItem: function(key) {
             let i = getIndex(this.items,key);
             this.items.splice(i,1);
+        },
+        markAsDone: function(key) {
+            let i = getIndex(this.items,key);
+            this.items[i].done = !this.items[i].done;
         }
     }
 });
